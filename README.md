@@ -56,5 +56,6 @@ Below are things you should not worry about when completing this challenge.
 ## Flaws/Improvements
 
 - Anything that needs improvement?
+- Hamburger icon is displayed on Desktop, should only be visible on smaller viewports.
 
 **Have fun building!** 🚀

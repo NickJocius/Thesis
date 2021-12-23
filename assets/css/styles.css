@@ -1,4 +1,7 @@
 /* Global Styles */
+:root {
+  --coolBlue: #2c99ed;
+}
 
 * {
   box-sizing: border-box;
@@ -7,13 +10,74 @@
 html {
   height: 100vh;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
+  padding: 0;
   min-width: 100%;
   min-height: 100vh;
 }
+
+/* Mobile First Menu */
+
+.active .menu-item {
+  display: block;
+}
+
+#header {
+  min-width: 100%;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu.active {
+  backdrop-filter: blur(6px);
+}
+
+.menu-icon img {
+  background-color: #ffffff;
+}
+
+.menu-item {
+  padding: 1rem;
+  order: 2;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.menu-link {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0.2rem;
+}
+
+.menu-link:hover {
+  color: var(--coolBlue);
+}
+
+.menu-logo {
+  padding: 1rem 1.5rem;
+}
+
+.toggle {
+  order: 1;
+  padding: 1rem 1.5rem;
+}
+
+/* Main Content */
 
 #main {
   min-width: 100%;
