@@ -12,7 +12,7 @@
     <main id='main'>
         <header id="header">
             
-            <nav id='navbar'>
+            <nav id='navbar' aria-label="top navbar">
                 <ul class="menu">
                     <li class="menu-logo"><a href='#'><img src="./assets/images/Logo.png" alt="logo"></a></li>
                     <li class="menu-item"><a href="#" class="menu-link">About</a></li>
@@ -27,15 +27,39 @@
 
         <div class="content">
             <section id="hero">
-
+                <div class="hero-div">
+                    <h1>Simple Way to Organize Your Inspirtations</h1>
+                    <p>I think what motivates people is not great hate, but great love for other people.</p>
+                </div>
             </section>
             <section id="signUp">
-
+                <div id="signUpForm">
+                <h4 id="formHead">Sign Up for Free</h4>
+                    <form action="POST">
+                        <input type="text" placeholder="Name" value="name">
+                        <input type="email" placeholder="E-mail" value="email">
+                        <input type="password" placeholder="Password" value="password">
+                        <button type="submit" id="button">Sign up</button>
+                    </form>
+                    <div id="terms">
+                        <p>By clicking "Sign up" I agree to our</p>
+                        <p>Terms of Service</p>
+                    </div>
+                    
+                </div>
             </section>
         </div>
 
         <footer id="footer">
-
+            <p id="copyright">&copy; 2016 Stamp. All Rights Reserved</p>
+            <nav aria-label="footer nav" >
+                <ul id="footerNav">
+                    <li class="footerLink">Contact</li>
+                    <li class="footerLink">Help</li>
+                    <li class="footerLink">Terms of Use</li>
+                    <li class="footerLink">Privacy Policy</li>
+                </ul>
+            </nav>
         </footer>
     </main>
 </body>
