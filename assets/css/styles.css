@@ -1,4 +1,6 @@
 /* Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 :root {
   --coolBlue: #2c99ed;
 }
@@ -25,7 +27,8 @@ body {
 
 #header {
   min-width: 100%;
-  align-self: start;
+  min-height: 100px;
+  align-items: center;
 }
 
 .menu {
@@ -38,8 +41,17 @@ body {
   padding: 0;
 }
 
+#navbar {
+  position: relative;
+  padding: 1rem;
+}
+
 .menu.active {
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
 }
 
 .menu-icon img {
@@ -59,6 +71,7 @@ body {
   text-decoration: none;
   display: block;
   padding: 0.5rem 0.2rem;
+  font-size: 1.2rem;
 }
 
 .menu-link:hover {
@@ -72,45 +85,6 @@ body {
 .toggle {
   order: 1;
   padding: 1rem 1.5rem;
-}
-
-/* Tablet menu */
-@media all and (min-width: 700px) {
-  .menu {
-    justify-content: center;
-  }
-  .menu-logo {
-    flex: 1;
-  }
-
-  .toggle {
-    flex: 1;
-    text-align: right;
-    order: 1;
-  }
-}
-
-/* Desktop menu */
-@media all and (min-width: 960px) {
-  .menu {
-    align-items: center;
-    flex-wrap: nowrap;
-    background: none;
-  }
-  .menu-logo {
-    order: 0;
-    flex: 0;
-  }
-  .menu-item {
-    order: 1;
-    position: relative;
-    display: block;
-    width: auto;
-    flex: 1;
-  }
-  .toggle {
-    display: none;
-  }
 }
 
 /* Main Content */
@@ -131,6 +105,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   order: 1;
+
   flex: 1;
 }
 
@@ -139,6 +114,7 @@ form {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  border-radius: 4px;
   border: solid rgba(255, 255, 255, 0.3);
 }
 
@@ -152,10 +128,15 @@ form input {
   border-top: none;
   background: rgba(255, 255, 255, 0.05);
   color: #ffffff;
-  font-family: Roboto;
-  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 28px;
+  padding: 0.5rem;
+}
+
+form input::placeholder {
+  color: #fff;
 }
 
 #button {
@@ -163,11 +144,14 @@ form input {
   height: 60px;
   background-color: #2c99ed;
   color: #ffffff;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 28px;
-  border: solid outset 5px #2c99ed;
+  outline: solid 2px #2c99ed;
+  border: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 #hero {
@@ -178,7 +162,7 @@ form input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .hero-div {
@@ -194,7 +178,7 @@ form input {
   font-weight: 400;
   line-height: 3rem;
   letter-spacing: -2px;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .hero-div p {
@@ -219,7 +203,7 @@ form input {
   width: 100%;
   height: 48px;
   color: #9b9b9b;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -245,6 +229,7 @@ form input {
   padding: 2rem 1rem 2rem 1rem;
 }
 
+/***** Footer Styles ******/
 #footer {
   min-width: 100%;
   display: flex;
@@ -258,7 +243,7 @@ form input {
 
 #copyright {
   color: #ffffff;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 17px;
@@ -284,4 +269,116 @@ form input {
   text-align: center;
 
   letter-spacing: 2px;
+}
+
+.footerLink:hover {
+  color: var(--coolBlue);
+  cursor: pointer;
+}
+
+#service {
+  color: #fff;
+}
+
+/******** Tablet Media Queries *******/
+@media all and (min-width: 700px) {
+  .menu {
+    justify-content: center;
+  }
+  .menu-logo {
+    flex: 1;
+    padding: 1rem 2rem;
+  }
+
+  .toggle {
+    flex: 1;
+    text-align: right;
+    order: 1;
+  }
+
+  .hero-div {
+    max-width: 80%;
+  }
+}
+
+/********* Desktop Media Queries ********/
+@media all and (min-width: 960px) {
+  .menu {
+    align-items: center;
+    flex-wrap: nowrap;
+    background: none;
+  }
+  .menu-logo {
+    order: 0;
+    flex: 0;
+  }
+  .menu-item {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+    flex: 1;
+  }
+  .toggle {
+    display: none;
+  }
+
+  .content {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    order: 1;
+    flex: 1;
+  }
+
+  #hero {
+    max-width: 50%;
+  }
+
+  .hero-div {
+    width: 555px;
+  }
+
+  .hero-div h1 {
+    font-size: 5rem;
+    line-height: 84px;
+  }
+
+  .hero-div p {
+    max-width: 85%;
+  }
+
+  #signUp {
+    max-width: 50%;
+  }
+
+  #signUpForm {
+    max-width: 460px;
+  }
+
+  #footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 60px;
+    padding: 2px 2rem;
+  }
+
+  #footerNav {
+    flex-direction: row;
+  }
+
+  #footer nav {
+    order: 1;
+  }
+
+  .footerLink {
+    padding-left: 1rem;
+  }
+
+  #copyright {
+    order: 0;
+  }
 }
