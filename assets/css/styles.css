@@ -68,6 +68,7 @@ a {
 #navbar {
   position: relative;
   padding: 1rem;
+  min-height: 117px;
 }
 
 .menu.active {
@@ -76,6 +77,7 @@ a {
   z-index: 99;
   top: 0;
   left: 0;
+  min-width: 100%;
 }
 
 .menu-item {
