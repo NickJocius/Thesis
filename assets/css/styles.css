@@ -19,6 +19,30 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+/**** Alert Styles ****/
+.alert {
+  display: none;
+}
+
+.success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: green;
+  top: 20px;
+  right: 10px;
+  width: 125px;
+  height: 60px;
+  color: #ffff;
+  border-radius: 5px;
+}
+
 /* Mobile First Menu */
 
 .active .menu-item {
@@ -54,10 +78,6 @@ body {
   left: 0;
 }
 
-.menu-icon img {
-  background-color: #ffffff;
-}
-
 .menu-item {
   padding: 1rem;
   order: 2;
@@ -68,7 +88,6 @@ body {
 
 .menu-link {
   color: #ffffff;
-  text-decoration: none;
   display: block;
   padding: 0.5rem 0.2rem;
   font-size: 1.2rem;
@@ -105,8 +124,67 @@ body {
   align-items: center;
   flex-wrap: wrap;
   order: 1;
-
   flex: 1;
+}
+
+/****** Hero Styles ******/
+#hero {
+  width: 100%;
+  height: auto;
+  color: #ffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.hero-div {
+  max-width: 100%;
+  min-height: 100%;
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+.hero-div h1 {
+  color: #ffffff;
+  font-family: "AvenirNext-DemiBold";
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 3rem;
+  letter-spacing: -2px;
+  padding-bottom: 2rem;
+}
+
+.hero-div p {
+  opacity: 0.8;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: -0.2px;
+}
+
+/****** Form Styles ******/
+
+#signUp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#terms {
+  width: 100%;
+  height: 48px;
+  color: #9b9b9b;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 form {
@@ -154,61 +232,8 @@ form input::placeholder {
   border-bottom-left-radius: 5px;
 }
 
-#hero {
-  width: 100%;
-  height: auto;
-  color: #ffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 3rem;
-}
-
-.hero-div {
-  max-width: 100%;
-  min-height: 100%;
-  padding: 2rem 1rem 2rem 1rem;
-}
-
-.hero-div h1 {
-  color: #ffffff;
-  font-family: "AvenirNext-DemiBold";
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 3rem;
-  letter-spacing: -2px;
-  padding-bottom: 2rem;
-}
-
-.hero-div p {
-  opacity: 0.8;
-  color: #ffffff;
-  font-family: Roboto;
-  font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 2rem;
-  letter-spacing: -0.2px;
-}
-
-#signUp {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#terms {
-  width: 100%;
-  height: 48px;
-  color: #9b9b9b;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: center;
-  margin-top: 1rem;
+#button:hover {
+  background-color: #4baffc;
 }
 
 #formHead {
@@ -260,18 +285,16 @@ form input::placeholder {
 }
 
 .footerLink {
-  text-decoration: none;
   color: #ffffff;
   font-family: "AvenirNext-DemiBold";
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
-
   letter-spacing: 2px;
 }
 
-.footerLink:hover {
+.footerLink a:hover {
   color: var(--coolBlue);
   cursor: pointer;
 }
@@ -304,19 +327,31 @@ form input::placeholder {
 /********* Desktop Media Queries ********/
 @media all and (min-width: 960px) {
   .menu {
+    justify-content: start;
     align-items: center;
     flex-wrap: nowrap;
     background: none;
+    min-width: 100%;
   }
   .menu-logo {
     order: 0;
-    flex: 0;
+    flex: 0 40%;
   }
   .menu-item {
     order: 1;
     position: relative;
     display: block;
     width: auto;
+    flex: 0;
+    max-width: fit-content;
+    margin-right: 0.5rem;
+  }
+
+  .menu-item a {
+    font-size: 1.5rem;
+  }
+
+  .menu-item:last-of-type {
     flex: 1;
   }
   .toggle {
@@ -376,6 +411,10 @@ form input::placeholder {
 
   .footerLink {
     padding-left: 1rem;
+  }
+
+  .footerLink a {
+    font-size: 1rem;
   }
 
   #copyright {

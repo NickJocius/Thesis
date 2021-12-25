@@ -19,13 +19,14 @@
                     <li class="menu-item"><a href="#" class="menu-link">Integrations</a></li>
                     <li class="menu-item"><a href="#" class="menu-link">Pricing</a></li>
                     <li class="menu-item"><a href="#" class="menu-link">Contacts</a></li>
-                    <li class="toggle"><a href="#" class="menu-icon"><img src="./assets/images/hamburger.svg" alt="toggle menu"></a></li>
+                    <li class="toggle"><a href="#" class="menu-icon"><img src="./assets/images/hamburger.png" alt="toggle menu"></a></li>
                 </ul>
             </nav>
         </header>
         
 
         <div class="content">
+            <div class="alert"></div>
             <section id="hero">
                 <div class="hero-div">
                     <h1>Simple Way to Organize Your Inspirtations</h1>
@@ -34,11 +35,11 @@
             </section>
             <section id="signUp">
                 <div id="signUpForm">
-                <h4 id="formHead">Sign Up for Free</h4>
-                    <form action="POST">
-                        <input type="text" placeholder="Name" name="name">
-                        <input type="email" placeholder="E-mail" name="email">
-                        <input type="password" placeholder="Password" name="password">
+                    <h4 id="formHead">Sign Up for Free</h4>
+                    <form name="myform" id="myForm">
+                        <input type="text" placeholder="Name" name="name" maxlength="30" required>
+                        <input type="email" placeholder="E-mail" name="email" required>
+                        <input type="password" placeholder="Password" name="password" minlength="6" maxlength="20" required>
                         <button type="submit" id="button">Sign up</button>
                     </form>
                     <div id="terms">
@@ -54,10 +55,10 @@
             <p id="copyright">&copy; 2016 Stamp. All Rights Reserved</p>
             <nav aria-label="footer nav" >
                 <ul id="footerNav">
-                    <li class="footerLink">Contact</li>
-                    <li class="footerLink">Help</li>
-                    <li class="footerLink">Terms of Use</li>
-                    <li class="footerLink">Privacy Policy</li>
+                    <li class="footerLink"><a href="#">Contact</a></li>
+                    <li class="footerLink"><a href="#">Help</a></li>
+                    <li class="footerLink"><a href="#">Terms of Use</a></li>
+                    <li class="footerLink"><a href="#">Privacy Policy</a></li>
                 </ul>
             </nav>
         </footer>
