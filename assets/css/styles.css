@@ -234,6 +234,7 @@ form input::placeholder {
 
 #button:hover {
   background-color: #4baffc;
+  cursor: pointer;
 }
 
 #formHead {
